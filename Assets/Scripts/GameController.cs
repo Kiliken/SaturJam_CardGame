@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
@@ -13,11 +14,27 @@ public class GameController : MonoBehaviour
 
     bool _mouseLeftDown = false;
 
-    [SerializeField]LayerMask layers;
+    [SerializeField] LayerMask layers;
+
+    [SerializeField] GameObject cardPrefab;
+    [SerializeField] Transform playerHand;
+
+    CardHolder[] playerHandCardPos = new CardHolder[] { 
+        new CardHolder(new Vector3(-1.80f, 0, 0)),
+        new CardHolder(new Vector3(-0.60f, 0, 0)),
+        new CardHolder(new Vector3(0.60f, 0, 0)),
+        new CardHolder(new Vector3(1.80f, 0, 0)),
+    };
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        for (int i = 0; i < playerHandCardPos.Length; i++)
+        {
+            Instantiate(cardPrefab, playerHand);
+            cardPrefab.transform.position = playerHandCardPos[i].pos;
+            playerHandCardPos[i].holdingCard = true;
+        }
     }
 
     // Update is called once per frame
@@ -58,5 +75,18 @@ public class GameController : MonoBehaviour
             }
             _mouseLeftDown = false;
         }
+    }
+}
+
+
+public struct CardHolder
+{
+    public Vector3 pos { get; set; }
+    public bool holdingCard { get; set; }
+
+    public CardHolder(Vector3 POS)
+    {
+        pos = POS;
+        holdingCard = false;
     }
 }

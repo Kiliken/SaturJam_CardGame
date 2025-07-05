@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9099808393875928439}
   - component: {fileID: 9087170512849833162}
   - component: {fileID: 2794424197829409601}
+  - component: {fileID: 2815217879302368641}
   m_Layer: 6
   m_Name: Card
   m_TagString: Card
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 436888273531302452}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.75, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -130,3 +131,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2815217879302368641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436888273531302452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e70faf5318a8e10449be91b247e4da94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seed: 0
+  value: 0
